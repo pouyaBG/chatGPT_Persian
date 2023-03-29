@@ -1,16 +1,15 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
-
-const inter = Inter({ subsets: ['latin'] })
-
-export default function Home() {
+import { ReactElement } from "react";
+import DefaultLayout from "../components/layout/default.leyout";
+function HomePage() {
   return (
     <>
-      <h1 className="text-3xl font-bold underline">
-        Hello world!
-      </h1>
+    <p>dddd</p>
     </>
-  )
+  );
 }
+
+export default HomePage;
+
+HomePage.getLayout = function getLayout(page: ReactElement) {
+  return <DefaultLayout>{page}</DefaultLayout>;
+};
