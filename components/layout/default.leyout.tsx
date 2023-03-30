@@ -9,6 +9,7 @@ const DefaultLayout = ({ children }: DefaultLayoutProps) => {
     <>
       <div className="h-screen">
         <div className="flex items-center">
+          {/* right */}
           <div className="text-white bg-[#070030] w-[15%] h-screen rounded-e-[30px] flex flex-col">
             {/* button */}
             <div className="flex mt-6 mr-2 justify-between w-[90%] border-2 rounded-lg border-white p-3 cursor-pointer ">
@@ -209,6 +210,19 @@ const DefaultLayout = ({ children }: DefaultLayoutProps) => {
                   </defs>
                 </svg>
                 <span className="mr-5">خارج شدن از حساب</span>
+              </div>
+            </div>
+          </div>
+          {/* left */}
+          <div className="w-[85%] h-screen p-5">
+            <div className="p-5 bg-[#E5E5E5] rounded-lg h-full">
+              {/* pages */}
+              <div>
+
+              </div>
+              {/* input */}
+              <div className="flex justify-center items-center">
+                <input type="text" className="absolute bottom-20 w-[70%] p-7 shadow-xl  rounded-full bg-[#D9D9D9] border-[#D9D9D9] focus:border-[#D9D9D9]" placeholder="چه سوالی داری ؟" />
               </div>
             </div>
           </div>
