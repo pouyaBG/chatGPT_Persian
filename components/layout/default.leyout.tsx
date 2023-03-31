@@ -7,7 +7,7 @@ type DefaultLayoutProps = {
 const DefaultLayout = ({ children }: DefaultLayoutProps) => {
   return (
     <>
-      <div className="h-screen">
+      <div className="h-screen bg-[#F5F5F5]">
         <div className="flex items-center">
           {/* right */}
           <div className="text-white bg-[#070030] w-[15%] h-screen rounded-e-[30px] flex flex-col">
@@ -215,10 +215,10 @@ const DefaultLayout = ({ children }: DefaultLayoutProps) => {
           </div>
           {/* left */}
           <div className="w-[85%] h-screen p-5">
-            <div className="p-5 bg-[#E5E5E5] rounded-lg h-full">
+            <div className="p-5 bg-[#eee] rounded-[41px] h-full">
               {/* pages */}
               <div>
-
+                {children}
               </div>
               {/* input */}
               <div className="flex justify-center items-center">

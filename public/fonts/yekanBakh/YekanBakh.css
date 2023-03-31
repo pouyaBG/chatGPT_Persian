@@ -1,0 +1,46 @@
+@font-face {
+    font-family:YekanBakh;
+    font-style:"";
+    font-weight:100;
+    src:url(./eot/100.eot?) format("eot"),
+    url(./woff/100.woff) format("woff"),
+    url(./ttf/100.ttf) format("truetype")
+}
+@font-face {
+    font-family:YekanBakh;
+    font-style:"";
+    font-weight:300;
+    src:url(./eot/300.eot?) format("eot"),
+    url(./woff/300.woff) format("woff"),
+    url(./ttf/300.ttf) format("truetype")
+}
+@font-face {
+    font-family:YekanBakh;
+    font-style:"";
+    font-weight:500;
+    src:url(./eot/500.eot?) format("eot"),
+    url(./woff/500.woff) format("woff"),
+    url(./ttf/500.ttf) 
+}
+@font-face {
+    font-family:YekanBakh;
+    font-style:"";
+    font-weight:400;
+    src:url(./eot/normal.eot?) format("eot"),
+    url(./woff/normal.woff) format("woff"),
+    url(./ttf/normal.ttf) format("truetype")
+}
+@font-face {
+    font-family:YekanBakh;
+    font-style:"";
+    font-weight:700;
+    src:url(./eot/bold.eot?) format("eot"),
+    url(./woff/bold.woff) format("woff"),
+    url(./ttf/bold.ttf) format("truetype")
+}
+@font-face {
+    font-family:YekanBakh;
+    font-style:"";
+    font-weight:800;
+    src:url(./woff/fat.woff) format("woff")
+}

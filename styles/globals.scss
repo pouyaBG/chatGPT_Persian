@@ -1,20 +1,40 @@
 @import "./index.css";
+@import "../public/fonts/yekanBakh/YekanBakh.css";
+
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  outline: none;
+  font-family: YekanBakh , 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .scrool::-webkit-scrollbar {
-  width: 10px;               /* width of the entire scrollbar */
+  width: 10px;
+  /* width of the entire scrollbar */
 }
 
 .scrool::-webkit-scrollbar-track {
-  background: #070030;        /* color of the tracking area */
+  background: #070030;
+  /* color of the tracking area */
 }
 
 .scrool::-webkit-scrollbar-thumb {
-  background-color: white;    /* color of the scroll thumb */
-  border-radius: 20px;       /* roundness of the scroll thumb */
-  border: 3px solid #070030;  /* creates padding around scroll thumb */
+  background-color: white;
+  /* color of the scroll thumb */
+  border-radius: 20px;
+  /* roundness of the scroll thumb */
+  border: 3px solid #070030;
+  /* creates padding around scroll thumb */
+}
+
+pre {
+  direction: ltr !important;
+  background-color: #070030;
+  color: #fff;
+  padding: 10px;
+  border-radius: 12px;
+  code {
+    font-family: 'Courier New', Courier, monospace;
+  }
 }
