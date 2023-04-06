@@ -217,12 +217,12 @@ const DefaultLayout = ({ children }: DefaultLayoutProps) => {
           <div className="w-[85%] h-screen p-5">
             <div className="p-5 bg-[#eee] rounded-[41px] h-full">
               {/* pages */}
-              <div>
+              <div className="overflow-auto h-[100%] scrool hg px-10 pb-[150px]">
                 {children}
               </div>
               {/* input */}
               <div className="flex justify-center items-center">
-                <input type="text" className="absolute bottom-20 w-[70%] p-7 shadow-xl  rounded-full bg-[#D9D9D9] border-[#D9D9D9] focus:border-[#D9D9D9]" placeholder="چه سوالی داری ؟" />
+                <input type="text" className="absolute bottom-10 w-[70%] p-7 shadow-xl  rounded-full bg-[#D9D9D9] border-[#D9D9D9] focus:border-[#D9D9D9]" placeholder="چه سوالی داری ؟" />
               </div>
             </div>
           </div>

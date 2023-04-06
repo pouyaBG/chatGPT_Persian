@@ -9,7 +9,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
                 url: 'https://api.openai.com/v1/chat/completions',
                 headers: {
                     'Content-Type': 'application/json',
-                    Authorization: 'Bearer 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'
+                    Authorization: 'Bearer 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'
                 },
                 data: { model: 'gpt-3.5-turbo', messages: req.body.messages }
             };

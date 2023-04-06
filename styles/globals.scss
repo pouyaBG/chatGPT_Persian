@@ -15,7 +15,7 @@
 }
 
 .scrool::-webkit-scrollbar-track {
-  background: #070030;
+  background: inherit;
   /* color of the tracking area */
 }
 
@@ -27,14 +27,28 @@
   border: 3px solid #070030;
   /* creates padding around scroll thumb */
 }
+.scrool.hg::-webkit-scrollbar-thumb {
+  background-color: white;
+  /* color of the scroll thumb */
+  border-radius: 20px;
+  /* roundness of the scroll thumb */
+  border: 3px solid #eee !important;
+}
 
 pre {
   direction: ltr !important;
-  background-color: #070030;
+  background-color: #070030 !important;
   color: #fff;
-  padding: 10px;
+  padding: 4px;
   border-radius: 12px;
+  margin: 20px;
+  text-shadow: none !important;
   code {
     font-family: 'Courier New', Courier, monospace;
+    text-shadow: none !important;
+    color: #fff !important;
+    span {
+      background: transparent !important;
+    }
   }
 }
