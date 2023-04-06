@@ -6,33 +6,27 @@
   padding: 0;
   margin: 0;
   outline: none;
-  font-family: YekanBakh , 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: YekanBakh, "Franklin Gothic Medium", "Arial Narrow", Arial,
+    sans-serif;
 }
 
 .scrool::-webkit-scrollbar {
   width: 10px;
-  /* width of the entire scrollbar */
 }
 
 .scrool::-webkit-scrollbar-track {
   background: inherit;
-  /* color of the tracking area */
 }
 
 .scrool::-webkit-scrollbar-thumb {
   background-color: white;
-  /* color of the scroll thumb */
   border-radius: 20px;
-  /* roundness of the scroll thumb */
   border: 3px solid #070030;
-  /* creates padding around scroll thumb */
 }
 .scrool.hg::-webkit-scrollbar-thumb {
-  background-color: white;
-  /* color of the scroll thumb */
+  background-color: rgba(255, 255, 255, 0.222);
   border-radius: 20px;
-  /* roundness of the scroll thumb */
-  border: 3px solid #eee !important;
+  border: 3px solid #eeeeee75 !important;
 }
 
 pre {
@@ -44,11 +38,53 @@ pre {
   margin: 20px;
   text-shadow: none !important;
   code {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "Courier New", Courier, monospace;
     text-shadow: none !important;
     color: #fff !important;
     span {
       background: transparent !important;
+    }
+  }
+}
+
+.newChatBtn {
+  border: 1px solid #fff;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.newChatBtn:before {
+  content: "";
+  position: absolute;
+  height: 150px;
+  width: 50px;
+  background: #fff;
+  right: -40px;
+  top: -40px;
+  transform: rotate(37deg);
+  transition: all 0.3s;
+  opacity: 0.3;
+}
+.newChatBtn:hover:before {
+  right: 100%;
+}
+.hoverBtn {
+  transition: all 0.2s;
+  border: #070030 1px solid;
+}
+
+.hoverBtn:hover {
+  // border: #eee 1px solid;
+  border-radius: 9px;
+  background-color: #eeeeee3e;
+}
+.svgDelere {
+  transition: all 0.2s;
+}
+.hoverBtn {
+  &:hover {
+    .svgDelere {
+      display: block !important;
     }
   }
 }
