@@ -1,10 +1,16 @@
-import { ReactNode } from "react";
+import React, { ReactNode } from "react";
+
+interface IData {
+  role: string;
+  content: string;
+}
 
 type DefaultLayoutProps = {
-  children: ReactNode;
+  children: ReactNode,
+  setData: React.Dispatch<React.SetStateAction<IData[]>>;
 };
 
-const DefaultLayout = ({ children }: DefaultLayoutProps) => {
+const DefaultLayout = ({ children, setData }: DefaultLayoutProps) => {
   return (
     <>
       <div className="h-screen bg-[#F5F5F5]">
@@ -220,9 +226,23 @@ const DefaultLayout = ({ children }: DefaultLayoutProps) => {
               <div className="overflow-auto h-[100%] scrool hg px-10 pb-[150px]">
                 {children}
               </div>
-              {/* input */}
-              <div className="flex justify-center items-center">
-                <input type="text" className="absolute bottom-10 w-[70%] p-7 shadow-xl  rounded-full bg-[#D9D9D9] border-[#D9D9D9] focus:border-[#D9D9D9]" placeholder="چه سوالی داری ؟" />
+              {/* input */}\
+              <div className="flex justify-center items-center m-auto">
+                <div className="flex justify-center items-center shadow-xl absolute bottom-10 w-[70%]  p-7 rounded-full bg-[#D9D9D9] border-[#D9D9D9] focus:border-[#D9D9D9]">
+                  <input type="text" className="bg-[#0000] w-full" placeholder="چه سوالی داری ؟" />
+                  {React.isValidElement(children) && children.props && (
+                    <svg onClick={children.props.handleSubmit} className="cursor-pointer" width="26" height="26" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g clip-path="url(#clip0_157_214)">
+                        <path d="M0.292137 0.292055C0.153687 0.43072 0.0590267 0.607004 0.0199146 0.79901C-0.0191975 0.991016 -0.0010376 1.19028 0.0721378 1.37206L11.7101 30.4661C11.8127 30.7223 11.984 30.9452 12.2051 31.1104C12.4262 31.2755 12.6886 31.3765 12.9634 31.4021C13.2382 31.4278 13.5147 31.3771 13.7625 31.2557C14.0104 31.1343 14.2199 30.9469 14.3681 30.7141L20.7241 20.7241L30.7141 14.3681C30.9475 14.22 31.1354 14.0104 31.2572 13.7623C31.379 13.5142 31.4298 13.2373 31.4042 12.9622C31.3785 12.687 31.2773 12.4243 31.1118 12.203C30.9463 11.9817 30.7228 11.8104 30.4661 11.7081L1.37214 0.0740554C1.19036 0.000879914 0.991096 -0.0172795 0.799091 0.0218328C0.607086 0.0609452 0.430801 0.155606 0.292137 0.294055V0.292055ZM18.7281 20.1401L13.2061 28.8161L3.74014 5.15206L18.7281 20.1401ZM5.15414 3.73806L28.8181 13.2041L20.1401 18.7241L5.15414 3.73806Z" fill="#201A44" />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_157_214">
+                          <rect width="32" height="32" fill="white" transform="matrix(-1 0 0 1 32 0)" />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  )}
+                </div>
               </div>
             </div>
           </div>

@@ -13,7 +13,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             const openai = new OpenAIApi(configuration);
             const response = await openai.createChatCompletion({
                 model: "gpt-3.5-turbo",
-                stream:true,
+                // stream:true,
                 messages: req.body.messages,
             });
             const completion = response.data;
