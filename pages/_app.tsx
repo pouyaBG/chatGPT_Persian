@@ -1,6 +1,7 @@
 import "styles/globals.scss"
 import type { AppProps } from 'next/app'
-import React from "react";
+import React, { useMemo } from "react";
+import axios from "axios";
 
 interface PageWithLayout {
   getLayout: (page: JSX.Element) => JSX.Element
@@ -17,18 +18,44 @@ interface IData {
 
 export default function MyApp({ Component, pageProps }: AppPageProps) {
   const getLayout = Component.getLayout || ((page) => page)
-  const [loading, setLoading] = React.useState<boolean>(true);
-  const [data, setData] = React.useState<IData[]>([
-    { role: "user", content: "متغییر ها در پایتون مثال بزن" },
-    {
-      role: "assistant",
-      content: "متغیرها در پایتون به شکل زیر تعریف می‌شوند:\n\n```python\nvariable_name = value\n```\nبرای مثال:\n\n```python\nage = 25\nname = \"John\"\nis_student = True\n```\nاین سه متغیر در مثال بالا، به ترتیب شامل سن، نام و وضعیت دانشجویی فردی هستند. مقدار سال تولد در اینجا یک عدد صحیح است، مقدار نام یک رشته (کاراکترهایی که با یکدیگر اشتراک دارند) است، وضعیت دانشجویی یک مقدار منطقی (بلی یا خیر) است."
-    },
-  ]);
+  const [loading, setLoading] = React.useState<boolean>(false);
+  const [data, setData] = React.useState<IData[]>([]);
+  const [result, setResult] = React.useState<IData | null>(null);
 
   function handleSubmit() {
-    alert("dddd")
+    const inputElement = document.getElementById("input-promp") as HTMLInputElement;
+    if (inputElement !== null) { // Check if the element exists
+      const inputElement = document.getElementById("input-promp") as HTMLInputElement;
+      const content = inputElement.value;
+      setData([...data, { role: "user", content }]);
+
+      inputElement.value = "";
+      inputElement.disabled = true;
+      setLoading(true)
+
+      let options = {
+        method: 'POST',
+        url: 'http://localhost:3000/api/gpt',
+        headers: { 'Content-Type': 'application/json' },
+        data: { messages: [...data, { role: "user", content }] },
+      };
+
+      axios.request(options).then(function (response) {
+        setLoading(false)
+        setResult(response.data.data.choices[0].message)
+        inputElement.disabled = false;
+      }).catch(function (error) {
+        console.log(error);
+      });
+    }
   }
+
+  useMemo(() => {
+    if (result) {
+      setData([...data, result]);
+    }
+  }, [result])
 
   return getLayout(<Component loading={loading} setLoading={setLoading} data={data} setData={setData} handleSubmit={handleSubmit} {...pageProps} />)
 }
+

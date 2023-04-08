@@ -26,29 +26,9 @@ type DefaultLayoutProps = {
   setData?: () => void;
 };
 
+
+
 const HomePage: HomePageType = ({ data, loading }) => {
-
-  const fetchData = async () => {
-
-    let options = {
-      method: 'POST',
-      url: 'http://localhost:3000/api/gpt',
-      headers: { 'Content-Type': 'application/json' },
-      data: { messages: [{ role: "user", content: "سلام ربات" }] }
-    };
-
-    axios.request(options).then(function (response) {
-      console.log(response.data);
-    }).catch(function (error) {
-      console.error(error);
-    });
-
-  }
-
-  useEffect(() => {
-    fetchData()
-  }, [])
-
 
   return (
     <>

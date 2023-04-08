@@ -166,7 +166,7 @@ const DefaultLayout = ({ children, setData }: DefaultLayoutProps) => {
               {/* input */}\
               <div className="flex justify-center items-center m-auto">
                 <div className="flex justify-center items-center shadow-xl absolute bottom-10 w-[70%]  p-7 rounded-full bg-[#D9D9D9] border-[#D9D9D9] focus:border-[#D9D9D9]">
-                  <input type="text" className="bg-[#0000] w-full" placeholder="چه سوالی داری ؟" />
+                  <input id="input-promp" type="text" className="bg-[#0000] w-full" placeholder="چه سوالی داری ؟" />
                   {React.isValidElement(children) && children.props && (
                     <svg onClick={children.props.handleSubmit} className="cursor-pointer" width="26" height="26" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <g clip-path="url(#clip0_157_214)">
